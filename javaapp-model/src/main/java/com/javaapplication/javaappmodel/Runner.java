@@ -1,6 +1,11 @@
 package com.javaapplication.javaappmodel;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Runner {
-    public String Name;
-    public RunnerStatus RunnerStatus = com.javaapplication.javaappmodel.RunnerStatus.UNKNOWN;
+    private String Name;
+    private RunnerStatus RunnerStatus = com.javaapplication.javaappmodel.RunnerStatus.UNKNOWN;
 }

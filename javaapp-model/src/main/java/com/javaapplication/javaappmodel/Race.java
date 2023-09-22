@@ -1,12 +1,15 @@
 package com.javaapplication.javaappmodel;
 
 
+import lombok.Setter;
+import lombok.Getter;
 import java.util.ArrayList;
 import java.util.Date;
-
+@Getter
+@Setter
 public class Race {
-    public String Title;
-    public Date StartDate;
-    public ArrayList<Runner> Runners;
+    private String Title;
+    private Date StartDate;
+    private ArrayList<Runner> Runners;
     public Race() {}
 }
