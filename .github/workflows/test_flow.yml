@@ -1,0 +1,32 @@
+name: Docker-Image
+
+on:
+  push:
+    # Publish `master` as Docker `latest` image.
+    branches:
+      - branch-that-doesnt-exist
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+
+jobs:
+
+  # Push image to GitHub Packages.
+  # See also https://docs.docker.com/docker-hub/builds/
+  push:
+    # Ensure test job passes before pushing image.
+    runs-on: ubuntu-latest
+
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Insert passwords into application.yml
+        run: |
+          cd javaapp-application/src/main/resources
+          sed -e "s/TEST_SECRET/${{ secrets.TEST_SECRET }}/g" application.yml > applicationTest.yml
+          echo Created: applicationTest.yml
+          ls -l
+          cat applicationTest.yml
