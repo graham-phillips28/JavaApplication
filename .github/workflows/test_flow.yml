@@ -4,7 +4,7 @@ on:
   push:
     # Publish `master` as Docker `latest` image.
     branches:
-      - branch-that-doesnt-exist
+      - branch-that-doesnt-exist-dont-run
 
     # Publish `v1.2.3` tags as releases.
     tags:
