@@ -26,7 +26,7 @@ jobs:
       - name: Insert passwords into application.yml
         run: |
           cd javaapp-application/src/main/resources
-          sed -e "s/TEST_SECRET/${{ secrets.TEST_SECRET }}/g" application.yml > applicationTest.yml
-          echo Created: applicationTest.yml
+          sed -e "s/TEST_SECRET/${{ secrets.TEST_SECRET }}/g" application.yml > application.yml
+          echo Created: application.yml
           ls -l
-          cat applicationTest.yml
+          cat application.yml
